@@ -1,1 +1,20 @@
+name: SAST Scan Project
 
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+
+jobs:
+  sast:
+    name: SAST Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      name: Checkout code
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.x
+
+      
